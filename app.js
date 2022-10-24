@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const request = require("request");
-const https = require("https");
+const http = require("http");
 const bodyParser = require("body-parser");
 
 
@@ -36,15 +36,15 @@ app.post("/", function (req, res) {
     }
 
     const jsonData = JSON.stringify(data)
-    const url = "https://us13.api.mailchimp.com/3.0/lists/eeed5d6736/"
+    const url = "http://us13.api.mailchimp.com/3.0/lists/eeed5d6736/"
     const options = {
         method: "POST",
-        auth: "shrigk:38431b75fe39b6ac84a0a0f97cd40c69-us13"
+        auth: "shrigk:3356f0b5b56bfcfba52fa58e2854f19f-us13"
     }
 
 
 
-    const request = https.request(url, options, function (response) {
+    const request = http.request(url, options, function (response) {
 
 
         console.log(response.statusCode)
@@ -83,7 +83,7 @@ app.post("/failure", function (req, res) {
 })
 
 //api KEY
-//38431b75fe39b6ac84a0a0f97cd40c69-us13
+//3356f0b5b56bfcfba52fa58e2854f19f-us13
 
 //listid
 //eeed5d6736
