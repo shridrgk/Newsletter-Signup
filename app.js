@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const request = require("request");
-const http = require("http");
+const https = require("https");
 const bodyParser = require("body-parser");
 const { json } = require("express/lib/response");
 
@@ -36,7 +36,7 @@ app.post("/", function (req, res) {
     }
 
     const jsonData = JSON.stringify(data)
-    const url = "http://us13.api.mailchimp.com/3.0/lists/eeed5d6736/"
+    const url = "https://us13.api.mailchimp.com/3.0/lists/eeed5d6736/"
     const options = {
         method: "POST",
         auth: "shrigk:38431b75fe39b6ac84a0a0f97cd40c69-us13"
@@ -44,7 +44,7 @@ app.post("/", function (req, res) {
 
 
 
-    const request = http.request(url, options, function (response) {
+    const request = https.request(url, options, function (response) {
 
 
         console.log(response.statusCode)
